@@ -60,4 +60,12 @@ Interface 추가
 ------
 
 2023.02.24
-IOC 
+### Spring에 객체로 관리해달라고 요청하기 
+ ``` 
+ @Component 
+ ```
+-> 싱글톤 패턴으로 바꿔어서 스프링부트에서 관리할 수 있도록 함. 
+
+*<span style="color:gray"> 싱글톤패턴이란? </span>*
+*<span style="color:gray"> 인스턴스가 오직 1개만 생성되어야 하는 경우에 사용함 </span>*
+*<span style="color:gray"> 자세한건 ....[싱글톤패턴]() </span>*
