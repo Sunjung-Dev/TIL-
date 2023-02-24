@@ -68,4 +68,4 @@ Interface 추가
 
 *<span style="color:gray"> 싱글톤패턴이란? </span>*
 *<span style="color:gray"> 인스턴스가 오직 1개만 생성되어야 하는 경우에 사용함 </span>*
-*<span style="color:gray"> 자세한건 ....[싱글톤패턴]() </span>*
+*<span style="color:gray"> 자세한건 ....[싱글톤패턴](https://github.com/Sunjung-Dev/MS/blob/main/SpringBoot/SingleTone.md) </span>*
