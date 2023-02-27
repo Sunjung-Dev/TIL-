@@ -103,3 +103,10 @@ class AppConfig{
     }
 }   
 ```
+
+직접 객체를 불러올 때 :spring에서 주입 받을 수 있는 장소 -> 변수, 생성자, set method
+
+### 용어 정리 
+- bean: 객체 
+- spring container: 객체가 관리되는 곳 
+- ioc: spring이 관리하게 됨 -> 제어의 역전 
