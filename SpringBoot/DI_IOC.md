@@ -64,8 +64,42 @@ Interface 추가
  ``` 
  @Component 
  ```
--> 싱글톤 패턴으로 바꿔어서 스프링부트에서 관리할 수 있도록 함. 
+-> 싱글톤 패턴으로 바꿔어서 스프링부트에서 관리할 수 있도록 함.
+-> 스프링이 관리할 수 있도록 권한을 넘김. (제어의 역전)
 
 *<span style="color:gray"> 싱글톤패턴이란? </span>*
 *<span style="color:gray"> 인스턴스가 오직 1개만 생성되어야 하는 경우에 사용함 </span>*
 *<span style="color:gray"> 자세한건 ....[싱글톤패턴](https://github.com/Sunjung-Dev/MS/blob/main/SpringBoot/SingleTone.md) </span>*
+
+
+
+encoder에 setIEncoder 추가함 
+```Java
+encoder.setIEncoder(urlEncoder);
+result = encoder.encode(url);
+```
+
+- 스프링에서 두개의 객체에 대해서 component를 붙혀주면 안됨 ->  스프링에서 어떤 것을 매칭할지 잘 모름
+-> @Qualifier 지정 
+```
+@Qualifier("urlEncoder")
+```
+>> -  class명이 앞글자는 소문자로 변하게 되고, Component이름 지정 가능함. 
+
+
+## 한개의 클래서에서 여러개의 bin을 등록할때, Configuration
+```java
+@Configuration
+class AppConfig{
+    
+    @Bean("base64Encoder")
+    public Encoder encoder(Base64Encoder base64Encoder){
+        return new Encoder(base64Encoder);
+    }
+    
+    @Bean("urlEncode")
+    public Encoder encoder(UrlEncoder urlEncoder){
+        return new Encoder(urlEncoder);
+    }
+}   
+```
