@@ -1,23 +1,27 @@
-def solution(numbers, target):
-    answer = 0
-    answer = dfs(numbers, 0, target, answer, 0)
-    return answer
 
 # dfs 방식으로 접근
-def dfs(numbers, i, target, answer, value):
+answer = 0
+def dfs(idx, numbers, target, value):
+    global answer # 전역변수 사용한다는 선언
 
-    #재귀함수 사용
-
-    if i == len(numbers) and target == value:
+    length = len(numbers)
+    # 전부 다 계산했을 때 target 과 같은 경우, 정답
+    if(idx == length and target == value):
         answer += 1
+        return
+    # 전부 다 계산했을 때 target 과 다른 경우,
+    if(idx == length):
         return 
 
-    if i == len(numbers):
-        return
+    # 현재 값을 더하거나 빼서 value 로 설정, 다음 index 계산을 위해 dfs 반복
+    dfs(idx+1, numbers, target, value+numbers[idx])
+    dfs(idx+1, numbers, target, value-numbers[idx])
 
-    dfs(numbers, i+1, target, answer, value + numbers[i])
-    dfs(numbers, i+1, target, answer, value - numbers[i])    
-    
+
+def solution(numbers, target):
+    global answer # 전역변수 사용한다는 선언
+    dfs(0, numbers, target, 0)
     return answer
+
 
 print(solution([1, 1, 1, 1, 1], 3))
