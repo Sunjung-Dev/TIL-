@@ -20,7 +20,18 @@
 
 - ## 예외처리하기 
 > - @ControllerAdvice, @ExceptionHandler
+
+
+
 > - RequestParam(required = false): 해당값이 입력되지 않아도 실행됨. 
+
+
+> - globalexception
+
+
+- ## 예외처리 잘 해보기 
+
+
 
 
 
