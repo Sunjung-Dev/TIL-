@@ -1,9 +1,7 @@
 from collections import deque
 
-
 def bfs(x, y , maps):
     queue = deque()
-
     queue.append((x, y))
     checked_list = list()
     dx = [-1, 1, 0, 0]
@@ -14,7 +12,6 @@ def bfs(x, y , maps):
         for j in range(4):
             nx = x + dx[j]
             ny = y + dy[j]
-
             if nx < 0 or ny < 0 or nx >= len(maps) or ny >= len(maps[0]):
                 continue
             if maps[nx][ny] == 0:
@@ -23,9 +20,8 @@ def bfs(x, y , maps):
                 scale += 1
                 maps[nx][ny] = 0
                 queue.append((nx, ny))
-
-
     return scale
+
 
 def main():
     N, M, K = map(int, input().split())

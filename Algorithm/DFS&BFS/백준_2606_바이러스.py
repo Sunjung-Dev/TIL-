@@ -24,8 +24,7 @@ def main():
 
     for i in range(1, v+1):
         parent[i]= i
-    
-
+        
     for i in range(e):
         a, b = map(int, input().split())
         union_parent(parent, a, b)
