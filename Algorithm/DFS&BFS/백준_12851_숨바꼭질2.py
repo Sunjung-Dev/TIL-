@@ -1,27 +1,27 @@
 from collections import deque
 
 
-def bfs(start_node):
-    visited = []
+def bfs(start_node, final_node):
+    visited = list()
     need_visited = deque()
     need_visited.append(start_node)
+    cnt = 0 
+    answer = 0
 
     while need_visited:
         node = need_visited.popleft()
         visited.append(node)
-        if node - 1 not in visited:
-            need_visited.append(node-1)
-        if node + 1 not in visited:
-            need_visited.append(node+1)
-        if node * 2 not in visited:
-            need_visited.append(node*2)
+       
+        for next_node in [node-1, node+1, node*2]:
+            if next_node == final_node:
+                cnt += 1
 
-    print(need_visited)
-    return need_visited
+            if next_node not in visited:
+                need_visited.append(next_node)
+        
+    print(answer)
+    return cnt
 
 if __name__ == "__main__":
     N, K = map(int, input().split())
-    print(bfs(5))
-
-
-
+    print(bfs(N, K))
