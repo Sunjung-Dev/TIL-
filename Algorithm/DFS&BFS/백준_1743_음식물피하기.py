@@ -31,6 +31,7 @@ def main():
         graph.append(list(map(int, input().split())))
 
     maps = [[0] * M for _ in range(N)]
+    print(maps)
     graph.sort()
 
     for i in range(0, len(graph)):

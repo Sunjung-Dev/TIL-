@@ -12,7 +12,6 @@ input = sys.stdin.readline
 N,M = map(int, input().split())
 rs = []
 chk = [False] * (N+1)
-print(chk)
 
 def backTracking(num):
     if num == M:
@@ -27,3 +26,11 @@ def backTracking(num):
             rs.pop()
 
 backTracking(0)
+
+
+a = [1]
+a = [1, 2]
+a = [1]
+a = [1, 3]
+a = [1]
+a = [1, 4]
