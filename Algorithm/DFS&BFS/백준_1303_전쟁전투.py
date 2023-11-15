@@ -25,10 +25,9 @@ def bfs(x, y , maps):
 
 def main():
     N, M = map(int, input().split())
-
     graph = []
     for i in range(N):
-        graph.append(list(map(str, input())))
+        graph.append(list(map(str, input().split())))
 
     print(graph)
     maps_w = [[0] * M for _ in range(N)]
@@ -40,7 +39,7 @@ def main():
                 maps_w[i][j] = 1
             elif graph[i][j] == 'B':
                 maps_b[i][j] = 1
-
+    print(maps_w, maps_b)
     score_w = 0
     score_b = 0
 
